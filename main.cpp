@@ -1,7 +1,10 @@
 #include <iostream>
-
 int main()
 {
+  int recommencer;
+  recommencer = 1;
+  while (recommencer == 1){
+
   float val1, val2;
 
   std::cout << "Saisir une premiere valeur : ";
@@ -42,7 +45,9 @@ int main()
 
   }
 
-  system("PAUSE");
-
+  std::cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << std::endl;
+  std::cout << "Recommencer ? (si 1 alors oui)" << std::endl;
+  std::cin >> recommencer;
+  }
   return 0;
 }
