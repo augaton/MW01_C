@@ -64,7 +64,7 @@ int main()
   Fichierlog.close();
 
   cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << "\n";
-  cout << "Recommencer ? (si 1 alors ==> oui)" << "\n";
+  cout << "Recommencer ? (si 1 alors oui)" << "\n";
   cin >> recommencer;
   }
   return 0;

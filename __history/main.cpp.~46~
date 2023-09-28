@@ -9,10 +9,10 @@ int main()
   recommencer = 1;
   while (recommencer == 1){
 
-  float val1, val2, choixoperation, resultat;
+  float val1, val2, choixoperation;
   char choix;
 
-  cout << "Tout sur une ligne ou bien en manuel (1 ligne , 2 manuel)" << endl;
+  cout << "Tout sur une ligne ou bien en manuel (1 ligne , 2 manuel)";
   cin >> choixoperation;
 
   if (choixoperation == 1) {
@@ -29,7 +29,8 @@ int main()
 	 cout << "Choissisez l'operateur (+, -, /, *, %) : ";
 	 cin >> choix;
   }
-  else
+
+  float resultat;
 
   switch (choix) {
 	case '+':
@@ -57,14 +58,13 @@ int main()
 		break;
 
   }
-
   ofstream Fichierlog;
   Fichierlog.open("journal.log", ios_base::app);
   Fichierlog << val1 << choix << val2 << ":" << resultat << "\n";
   Fichierlog.close();
 
   cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << "\n";
-  cout << "Recommencer ? (si 1 alors ==> oui)" << "\n";
+  cout << "Recommencer ? (si 1 alors oui)" << "\n";
   cin >> recommencer;
   }
   return 0;
