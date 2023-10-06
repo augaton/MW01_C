@@ -60,8 +60,8 @@
         <_TCHARMapping>char</_TCHARMapping>
         <SanitizedProjectName>Project1</SanitizedProjectName>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <ILINK_LibraryPath>..\..\..\..\Desktop\M01\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>..\..\..\..\Desktop\M01\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\;..\..\..\..\Desktop\M01\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>..\;..\..\..\..\Desktop\M01\;$(IncludePath)</IncludePath>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
         <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
@@ -122,6 +122,18 @@
         <BCC_PCHName_Clang>Project1PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="IRClientUDP.cpp">
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <None Include="IRClientUDP.h">
+            <BuildOrder>2</BuildOrder>
+        </None>
+        <CppCompile Include="IRLigne.cpp">
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <None Include="IRLigne.h">
+            <BuildOrder>4</BuildOrder>
+        </None>
         <CppCompile Include="main.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>

@@ -7,6 +7,24 @@
 
 using namespace std;
 
+void dechiffrement(string messageChiffre, string & message)
+{
+	string cle = "CyberSecurite";
+	for (int i = 0 ; i < messageChiffre.length() ; i++)
+	{
+		message[i] = messageChiffre[i] ^ cle[i%cle.length()];
+	}
+}
+
+void chiffrement(string message, string & messageChiffre)
+{
+	string cle = "CyberSecurite";
+	for (int i = 0 ; i < message.length() ; i++)
+	{
+		messageChiffre[i] = message[i] ^ cle[i%cle.length()];
+	}
+}
+
 int main()
 {
   stringstream ss;
@@ -84,13 +102,21 @@ int main()
   ligne.ModifierMessage(operation);
   string trame = ligne.Trame();
 
+  string trameChiffree = trame;
+  chiffrement(trame, trameChiffree);
+
+  cout << "Trame Normale: " << trame << "\n" ;
+  cout << "Trame Chiffre: " << trameChiffree << "\n" ;
+
+  string TrameDechiffree = trameChiffree;
+  dechiffrement(trameChiffree, TrameDechiffree);
+  cout << "Trame Dechiffre: " << TrameDechiffree << "\n" ;
+
   client.OuvrirLaSocketDeCommunication("172.20.21.157",4020);
   client.EnvoyerUnMessage(trame);
   client.FermerLaSocket();
 
-  cout << trame << "\n" ;
-
-  cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << "\n";
+  // cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << "\n";
   cout << "Recommencer ? (si 1 alors ==> oui)" << "\n";
   cin >> recommencer;
   }
